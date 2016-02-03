@@ -1,0 +1,1 @@
+# IBM Watson Translator PHP Client [![Build Status](https://travis-ci.org/sergiocarlosmorales/IBM-Watson-Translator-PHP-Client.svg?branch=master)](https://travis-ci.org/sergiocarlosmorales/IBM-Watson-Translator-PHP-Client)
