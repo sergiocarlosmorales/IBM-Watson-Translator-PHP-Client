@@ -1,0 +1,16 @@
+{
+  "autoload": {
+    "psr-4": {"SergioCarlos\\IBMWatson\\WatsonLanguageTranslator\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SergioCarlos\\IBMWatson\\WatsonLanguageTranslator\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.1"
+  }
+}
