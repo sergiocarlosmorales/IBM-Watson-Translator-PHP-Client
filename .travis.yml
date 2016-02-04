@@ -8,3 +8,7 @@ php:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
+  
+addons:
+    code_climate:
+        repo_token: 2661be7c92f49f9a382e5d041a955891c8354880f585d6fd323e228b25a4cc28
