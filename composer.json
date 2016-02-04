@@ -1,5 +1,5 @@
 {
-  "name": "sergiocarlosmorales/IBM-Watson-Translator-PHP-Client",
+  "name": "sergiocarlosmorales/ibm-watson-translator-php-client",
   "description": "PHP client to interact with IBM Watson's translator service offered through BlueMix.",
   "keywords": ["translator", "language", "bluemix", "watson", "api", "client"],
   "homepage": "https://github.com/sergiocarlosmorales/IBM-Watson-Translator-PHP-Client",
