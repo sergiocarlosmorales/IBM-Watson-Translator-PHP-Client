@@ -1,4 +1,15 @@
 {
+  "name": "sergiocarlosmorales/IBM-Watson-Translator-PHP-Client",
+  "description": "PHP client to interact with IBM Watson's translator service offered through BlueMix.",
+  "keywords": ["translator", "language", "bluemix", "watson", "api", "client"],
+  "homepage": "https://github.com/sergiocarlosmorales/IBM-Watson-Translator-PHP-Client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sergio Carlos Morales Angeles",
+      "email": "carloschilazo@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {"SergioCarlos\\IBMWatson\\WatsonLanguageTranslator\\": "src/"}
   },
