@@ -17,6 +17,8 @@ use SergioCarlos\IBMWatson\WatsonLanguageTranslator\Exception\Unauthorized as Un
 class Transport
 {
     const API_URL = 'https://gateway.watsonplatform.net/language-translation/api/v2/';
+    const MIME_TYPE_PLAIN_TEXT = 'text/plain';
+    const MIME_TYPE_JSON = 'application/json';
 
     /**
      * @var HttpClient
@@ -60,7 +62,7 @@ class Transport
      */
     public function sendSynchronousPlainTextApiRequest($httpMethod, $apiUri, $requestBody)
     {
-        $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, 'text/plain');
+        return $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, static::MIME_TYPE_PLAIN_TEXT);
     }
 
     /**
@@ -70,7 +72,7 @@ class Transport
      * @return mixed
      */
     public function sendSynchronousJsonApiRequest($httpMethod, $apiUri, $requestBody) {
-        $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, 'application/json');
+        return $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, static::MIME_TYPE_JSON);
     }
 
     /**
