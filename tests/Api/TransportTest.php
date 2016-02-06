@@ -50,7 +50,7 @@ class TransportTest extends \PHPUnit_Framework_TestCase
             ->with($httpMethod, $apiUri, $expectedHeadersArray)
             ->will($this->returnValue(new Response()));
         $transport = new Transport($username, $password, $httpClient);
-        $transport->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, $isRequestBodyJsonFlag);
+        $transport->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, $expectedHeaderContentType);
     }
 
     /**

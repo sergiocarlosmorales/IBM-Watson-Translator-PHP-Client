@@ -48,12 +48,20 @@ class Client implements ServiceInterface
         $requestBody,
         $jsonRequestBodyFlag = false
     ) {
-        return $this->apiTransport->sendSynchronousApiRequest(
-            $httpMethod,
-            $apiUri,
-            $requestBody,
-            $jsonRequestBodyFlag
-        );
+        if ($jsonRequestBodyFlag) {
+            return $this->apiTransport->sendSynchronousJsonApiRequest(
+                $httpMethod,
+                $apiUri,
+                $requestBody
+            );
+        } else {
+            return $this->apiTransport->sendSynchronousPlainTextApiRequest(
+                $httpMethod,
+                $apiUri,
+                $requestBody
+            );
+        }
+
     }
 
     /**

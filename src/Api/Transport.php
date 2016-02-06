@@ -56,7 +56,28 @@ class Transport
      * @param string $httpMethod
      * @param string $apiUri
      * @param string $requestBody
-     * @param bool $jsonRequestBodyFlag
+     * @return mixed
+     */
+    public function sendSynchronousPlainTextApiRequest($httpMethod, $apiUri, $requestBody)
+    {
+        $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, 'text/plain');
+    }
+
+    /**
+     * @param string $httpMethod
+     * @param string $apiUri
+     * @param string $requestBody
+     * @return mixed
+     */
+    public function sendSynchronousJsonApiRequest($httpMethod, $apiUri, $requestBody) {
+        $this->sendSynchronousApiRequest($httpMethod, $apiUri, $requestBody, 'application/json');
+    }
+
+    /**
+     * @param string $httpMethod
+     * @param string $apiUri
+     * @param string $requestBody
+     * @param string $bodyContentType
      * @return mixed
      * @throws TransportException
      */
@@ -64,7 +85,7 @@ class Transport
         $httpMethod,
         $apiUri,
         $requestBody,
-        $jsonRequestBodyFlag = false
+        $bodyContentType
     ) {
         try {
             $response = $this->httpClient->request(
@@ -75,9 +96,7 @@ class Transport
                     HTTPRequestOptions::BODY => $requestBody,
                     HTTPRequestOptions::HEADERS => [
                         'Accept' => 'application/json',
-                        'Content-Type' => ($jsonRequestBodyFlag)
-                            ? 'application/json'
-                            : 'text/plain',
+                        'Content-Type' => $bodyContentType,
                     ],
                 ]
             );
