@@ -5,4 +5,4 @@ PHP client for IBM Watson's Language Translator service, it allows to translate 
 
 - Simple interface: quick & easy to use.
 - Abstracts API & transport: provide  text to translate or identify and it takes care of the rest.
-- Permissive license: Public, commercial or private use. You can use, distribute or modify it. MIT license.
+- Permissive license: public, commercial or private. Use, distribute or modify it. MIT license.
