@@ -6,7 +6,7 @@ namespace SergioCarlos\IBMWatson\WatsonLanguageTranslator\Exception;
  * This usually indicates a problem with the library, and as such, it should be extremely
  * rare.
  */
-class UnexpectedAPIResponse extends \Exception
+class UnexpectedAPIResponse extends \UnexpectedValueException
 {
 
 }

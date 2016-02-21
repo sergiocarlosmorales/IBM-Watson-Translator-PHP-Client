@@ -54,19 +54,19 @@ class Client implements ServiceInterface
                 $apiUri,
                 $requestBody
             );
-        } else {
-            return $this->apiTransport->sendSynchronousPlainTextApiRequest(
-                $httpMethod,
-                $apiUri,
-                $requestBody
-            );
         }
 
+        return $this->apiTransport->sendSynchronousPlainTextApiRequest(
+            $httpMethod,
+            $apiUri,
+            $requestBody
+        );
     }
 
     /**
      * Simple translation, specify text and target language.
      * This makes first a call to identify the source language.
+     * Simple interface, but expensive since it requires 2 API calls
      * @param string $text
      * @param string $targetLanguageCode 2 character language code.
      * @return string

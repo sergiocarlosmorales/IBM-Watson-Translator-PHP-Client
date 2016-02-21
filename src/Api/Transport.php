@@ -114,16 +114,16 @@ class Transport
     }
 
     /**
-     * @param HttpClientException $e
+     * @param HttpClientException $exception
      * @throws TransportException
      */
-    protected function handleClientException(HttpClientException $e)
+    protected function handleClientException(HttpClientException $exception)
     {
-        switch ($e->getResponse()->getStatusCode()) {
+        switch ($exception->getResponse()->getStatusCode()) {
             case 401:
-                throw new UnauthorizedException("Unauthorized API request.", 0, $e);
+                throw new UnauthorizedException("Unauthorized API request.");
             default:
-                throw new ClientException($e->getMessage(), 0, $e);
+                throw new ClientException($exception->getMessage());
         }
     }
 }
